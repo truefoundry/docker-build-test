@@ -40,16 +40,6 @@ jobs:
           username: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_USERNAME }}
           password: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_PASSWORD }}
 
-      - name: Build and push Docker image with uv
-        uses: docker/build-push-action@v5
-        with:
-          context: .  # Context for the second Dockerfile
-          file: ./Dockerfile.uv  # Path to the second Dockerfile
-          push: true
-          tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
-          cache-from: type=local,src=/tmp/.buildx-cache-dockerfile2
-          cache-to: type=local,dest=/tmp/.buildx-cache-dockerfile2
-
       - name: Build Docker image with uv
         run: |
           start_time=$(date +%s)

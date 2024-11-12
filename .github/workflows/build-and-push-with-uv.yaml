@@ -43,7 +43,7 @@ jobs:
       - name: Build Docker image with uv
         run: |
           start_time=$(date +%s)
-          docker buildx build --file ./Dockerfile.uv --tag latest --load .  
+          docker buildx build --file ./Dockerfile.uv --tag latest --cache-from=type=local,src=/tmp/.buildx-cache-dockerfile2 --cache-to=type=local,dest=/tmp/.buildx-cache-dockerfile2 --load .  
           end_time=$(date +%s)
           build_duration=$((end_time - start_time))
           echo "Image with uv build time: $build_duration seconds"

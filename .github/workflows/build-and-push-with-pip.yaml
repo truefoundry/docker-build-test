@@ -33,7 +33,7 @@ jobs:
       - name: Build Docker image with pip
         run: |
           start_time=$(date +%s)
-          docker buildx build --file ./Dockerfile.pip --tag latest --load .  
+          docker buildx build --file ./Dockerfile.pip --tag latest --cache-from=type=local,src=/tmp/.buildx-cache-dockerfile1 --cache-to=type=local,dest=/tmp/.buildx-cache-dockerfile1 --load .  
           end_time=$(date +%s)
           build_duration=$((end_time - start_time))
           echo "Image with pip build time: $build_duration seconds"

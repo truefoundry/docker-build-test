@@ -9,7 +9,6 @@ jobs:
 
     steps:
       - name: Free Disk Space (Ubuntu)
-        if: ${{ inputs.free_disk_space }}
         uses: jlumbroso/free-disk-space@main
         with:
           tool-cache: true

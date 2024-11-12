@@ -8,6 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Free Disk Space (Ubuntu)
+        if: ${{ inputs.free_disk_space }}
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: false
       - name: Checkout repository
         uses: actions/checkout@v3
 

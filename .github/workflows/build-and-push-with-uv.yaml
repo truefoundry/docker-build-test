@@ -29,9 +29,9 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          registry: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_REGISTRY_URL }}
-          username: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_PRIVATE_USERNAME }}
-          password: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_PRIVATE_PASSWORD }}
+          registry: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}
+          username: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_USERNAME }}
+          password: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_PASSWORD }}
 
       - name: Build and push Docker image with uv
         uses: docker/build-push-action@v5
@@ -39,6 +39,6 @@ jobs:
           context: .  # Context for the second Dockerfile
           file: ./Dockerfile.uv  # Path to the second Dockerfile
           push: true
-          tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_REGISTRY_URL }}/build-with-uv:latest
+          tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
           cache-from: type=local,src=/tmp/.buildx-cache-dockerfile2
           cache-to: type=local,dest=/tmp/.buildx-cache-dockerfile2

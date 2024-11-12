@@ -39,3 +39,20 @@ jobs:
           tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
           cache-from: type=local,src=/tmp/.buildx-cache-dockerfile2
           cache-to: type=local,dest=/tmp/.buildx-cache-dockerfile2
+
+      - name: Build Docker image with uv
+        run: |
+          start_time=$(date +%s)
+          docker buildx build --file ./Dockerfile.uv --tag latest --load .  
+          end_time=$(date +%s)
+          build_duration=$((end_time - start_time))
+          echo "Image with uv build time: $build_duration seconds"
+      
+      - name: Measure push time for Docker image with uv
+        run: |
+          start_time=$(date +%s)
+          docker tag latest ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
+          docker push ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
+          end_time=$(date +%s)
+          push_duration=$((end_time - start_time))
+          echo "Image eith uv push time: $push_duration seconds"

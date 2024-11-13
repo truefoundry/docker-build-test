@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .  
-          file: ./Dockerfile.pip  
+          file: ./Dockerfile.pip-without-cache-mount  
           push: true
           tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-pip:latest
           cache-from: type=local,src=/tmp/.buildx-cache-dockerfile1

@@ -5,9 +5,9 @@ ENV UV_LINK_MODE=copy
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install uv
+RUN --mount=type=cache,target=/root/.cache/pip pip install --no-cache-dir uv
 
-RUN --mount=type=cache,target=/root/.cache/pip uv pip install -r requirements.txt --system
+RUN --mount=type=cache,target=/root/.cache/pip uv pip install --no-cache-dir -r requirements.txt --system
 
 COPY . /app/
 

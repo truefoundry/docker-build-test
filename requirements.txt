@@ -1,5 +1,5 @@
-huggingface-hub==0.25.1
 fastapi[standard]==0.110.2
 vllm==0.6.1
 transformers==4.44.2
+huggingface-hub==0.25.1
 django==5.0.2

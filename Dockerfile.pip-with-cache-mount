@@ -10,10 +10,6 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.ca
 
 RUN --mount=type=cache,target=/root/.cache/pip ls -ltr /root/.cache/pip
 
-RUN echo "====================="
-
-RUN ls -ltr /root/.cache/pip
-
 COPY . /app/
 
 EXPOSE 8000

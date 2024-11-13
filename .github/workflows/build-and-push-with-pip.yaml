@@ -25,11 +25,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Cache for the first Dockerfile
+
       - name: Cache Docker layers for Dockerfile pip
         uses: actions/cache@v3
         with:
-          path: /tmp/.buildx-cache-dockerfile1  # Cache directory for Dockerfile 1
+          path: /tmp/.buildx-cache-dockerfile1 
           key: ${{ runner.os }}-buildx-dockerfile1-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-dockerfile1-
@@ -41,19 +41,12 @@ jobs:
           username: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_USERNAME }}
           password: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_PASSWORD }}
 
-      - name: Build Docker image with pip
-        run: |
-          start_time=$(date +%s)
-          docker buildx build --file ./Dockerfile.pip --tag latest --cache-from=type=local,src=/tmp/.buildx-cache-dockerfile1 --cache-to=type=local,dest=/tmp/.buildx-cache-dockerfile1 --load .  
-          end_time=$(date +%s)
-          build_duration=$((end_time - start_time))
-          echo "Image with pip build time: $build_duration seconds"
-      
-      - name: Measure push time for Docker image with pip
-        run: |
-          start_time=$(date +%s)
-          docker tag latest ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-pip:latest
-          docker push ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-pip:latest
-          end_time=$(date +%s)
-          push_duration=$((end_time - start_time))
-          echo "Image eith pip push time: $push_duration seconds"
+      - name: Build and push Docker image with pip
+        uses: docker/build-push-action@v5
+        with:
+          context: .  
+          file: ./Dockerfile.pip  
+          push: true
+          tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-pip:latest
+          cache-from: type=local,src=/tmp/.buildx-cache-dockerfile1
+          cache-to: type=local,dest=/tmp/.buildx-cache-dockerfile1

@@ -24,11 +24,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Cache for the second Dockerfile
+
       - name: Cache Docker layers for Dockerfile uv
         uses: actions/cache@v3
         with:
-          path: /tmp/.buildx-cache-dockerfile2  # Cache directory for Dockerfile 2
+          path: /tmp/.buildx-cache-dockerfile2  
           key: ${{ runner.os }}-buildx-dockerfile2-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-dockerfile2-
@@ -40,19 +40,12 @@ jobs:
           username: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_USERNAME }}
           password: ${{ secrets.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_PASSWORD }}
 
-      - name: Build Docker image with uv
-        run: |
-          start_time=$(date +%s)
-          docker buildx build --file ./Dockerfile.uv --tag latest --cache-from=type=local,src=/tmp/.buildx-cache-dockerfile2 --cache-to=type=local,dest=/tmp/.buildx-cache-dockerfile2 --load .  
-          end_time=$(date +%s)
-          build_duration=$((end_time - start_time))
-          echo "Image with uv build time: $build_duration seconds"
-      
-      - name: Measure push time for Docker image with uv
-        run: |
-          start_time=$(date +%s)
-          docker tag latest ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
-          docker push ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
-          end_time=$(date +%s)
-          push_duration=$((end_time - start_time))
-          echo "Image eith uv push time: $push_duration seconds"
+      - name: Build and push Docker image with uv
+        uses: docker/build-push-action@v5
+        with:
+          context: .  
+          file: ./Dockerfile.uv  
+          push: true
+          tags: ${{ vars.TRUEFOUNDRY_ARTIFACTORY_INTERNAL_REPOSITORY }}/build-with-uv:latest
+          cache-from: type=local,src=/tmp/.buildx-cache-dockerfile2
+          cache-to: type=local,dest=/tmp/.buildx-cache-dockerfile2

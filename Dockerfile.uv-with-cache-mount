@@ -5,6 +5,8 @@ ENV UV_LINK_MODE=copy
 
 COPY ./requirements.txt /app/requirements.txt
 
+RUN ls -ltr /var/lib/buildkit/
+
 RUN --mount=type=cache,target=/var/lib/buildkit/.cache pip install --cache-dir=/var/lib/buildkit/.cache uv
 
 RUN --mount=type=cache,target=/var/lib/buildkit/.cache uv pip install --cache-dir=/var/lib/buildkit/.cache -r requirements.txt --system

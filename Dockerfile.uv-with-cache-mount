@@ -2,12 +2,12 @@ FROM python:3.11.0-slim
 
 WORKDIR /app
 ENV UV_LINK_MODE=copy
-ENV UV_CACHE_DIR=/var/lib/buildkit/.cache/
+
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/var/lib/buildkit/.cache/ pip install --cache-dir=/var/lib/buildkit/.cache/ uv
+RUN --mount=type=cache,target=/var/lib/buildkit/.cache pip install --cache-dir=/var/lib/buildkit/.cache uv
 
-RUN --mount=type=cache,target=/var/lib/buildkit/.cache/ uv pip install --cache-dir=/var/lib/buildkit/.cache/ -r requirements.txt --system
+RUN --mount=type=cache,target=/var/lib/buildkit/.cache uv pip install --cache-dir=/var/lib/buildkit/.cache -r requirements.txt --system
 
 COPY . /app/
 

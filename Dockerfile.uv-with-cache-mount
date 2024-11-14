@@ -4,13 +4,13 @@ WORKDIR /app
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/pip ls -ltr /root/.cache/pip 
+RUN --mount=type=cache,target=/root/.cache/uv ls -ltr /root/.cache/uv 
 
 RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.cache/pip uv
 
 RUN uv cache dir
 
-RUN --mount=type=cache,target=/root/.cache/pip uv pip install --cache-dir=/root/.cache/pip -r requirements.txt --system
+RUN --mount=type=cache,target=/root/.cache/uv uv pip install -r requirements.txt --system
 
 COPY . /app/
 

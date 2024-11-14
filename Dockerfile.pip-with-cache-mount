@@ -2,13 +2,13 @@ FROM python:3.10.2-slim
 
 WORKDIR /app
 
-RUN echo "Starting the build"
+RUN echo "Starting the build again"
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.cache/pip -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip1 pip install --cache-dir=/root/.cache/pip1 -r requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/pip ls -ltr /root/.cache/pip
+RUN --mount=type=cache,target=/root/.cache/pip1 ls -ltr /root/.cache/pip1
 
 COPY . /app/
 

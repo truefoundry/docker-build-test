@@ -2,19 +2,19 @@ FROM python:3.10.2-slim
 
 WORKDIR /app
 
-RUN echo "Starting the build"
+RUN echo "Starting the build again"
 
 ENV UV_LINK_MODE=copy
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/uv ls -ltr /root/.cache/uv 
+RUN --mount=type=cache,target=/root/.cache/uv1 ls -ltr /root/.cache/uv1 
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.cache/pip uv
+RUN --mount=type=cache,target=/root/.cache/pip1 pip install --cache-dir=/root/.cache/pip1 uv
 
 RUN uv cache dir
 
-RUN --mount=type=cache,target=/root/.cache/uv uv pip install --cache-dir=/root/.cache/uv -r requirements.txt --system
+RUN --mount=type=cache,target=/root/.cache/uv1 uv pip install --cache-dir=/root/.cache/uv1 -r requirements.txt --system
 
 COPY . /app/
 

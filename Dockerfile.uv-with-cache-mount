@@ -6,13 +6,13 @@ ENV UV_LINK_MODE=copy
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/uv-test2 ls -ltr /root/.cache/uv-test2 
+RUN --mount=type=cache,target=/root/.cache/uv ls -ltr /root/.cache/uv 
 
-RUN --mount=type=cache,target=/root/.cache/uv-test2 pip install --cache-dir=/root/.cache/uv-test2 uv
+RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.cache/pip uv
 
 RUN uv cache dir
 
-RUN --mount=type=cache,target=/root/.cache/uv-test2 uv pip install --cache-dir=/root/.cache/uv-test2 -r requirements.txt --system
+RUN --mount=type=cache,target=/root/.cache/uv uv pip install --cache-dir=/root/.cache/uv -r requirements.txt --system
 
 COPY . /app/
 

@@ -9,7 +9,7 @@
 
 vllm==0.5.4
 
-fastapi[standard]==0.109.2
-transformers==4.43.4
+fastapi[standard]==0.109.1
+transformers==4.43.3
 
-huggingface-hub==0.24.7
+huggingface-hub==0.24.6

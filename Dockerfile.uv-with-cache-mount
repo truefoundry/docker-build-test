@@ -1,4 +1,4 @@
-FROM python:3.11.0-slim
+FROM python:3.10.0-slim
 
 WORKDIR /app
 
@@ -6,13 +6,13 @@ ENV UV_LINK_MODE=copy
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN --mount=type=cache,target=/root/.cache/uv ls -ltr /root/.cache/uv 
+RUN --mount=type=cache,target=/root/.cache/uv-test ls -ltr /root/.cache/uv-test 
 
-RUN --mount=type=cache,target=/root/.cache/pip pip install --cache-dir=/root/.cache/pip uv
+RUN --mount=type=cache,target=/root/.cache/uv-test pip install --cache-dir=/root/.cache/uv-test uv
 
 RUN uv cache dir
 
-RUN --mount=type=cache,target=/root/.cache/uv uv pip install -r requirements.txt --system --verbose
+RUN --mount=type=cache,target=/root/.cache/uv-test uv pip install --cache-dir=/root/.cache/uv-test -r requirements.txt --system --verbose
 
 COPY . /app/
 

@@ -2,7 +2,7 @@ FROM python:3.10.2-slim
 
 WORKDIR /app
 
-RUN echo "Starting the build"
+RUN echo "Starting the build again"
 
 COPY ./requirements.txt /app/requirements.txt
 

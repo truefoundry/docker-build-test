@@ -1,0 +1,36 @@
+`buildkit.toml`
+
+debug = true
+
+[worker.containerd]
+enabled = false
+
+[worker.oci]
+enabled = true
+gc = true
+gckeepstorage = "117400000000"
+max-parallelism = 4
+
+[[worker.oci.gcpolicy]]
+keepBytes = "0"
+keepDuration = 0
+filters = ["type==source.local","type==source.git.checkout"]
+[[worker.oci.gcpolicy]]
+keepBytes = "10000000000"
+keepDuration = "48h"
+filters = ["type==exec.cachemount"]
+[[worker.oci.gcpolicy]]
+keepBytes = "107400000000"
+all = true
+
+----------------------------------------------
+
+resources:
+    limits:
+        cpu: 3500m
+        memory: 28Gi
+        ephemeral-storage: 100Mi
+    requests:
+        cpu: 3200m
+        memory: 25Gi
+        ephemeral-storage: 100Mi

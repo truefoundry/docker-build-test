@@ -1,0 +1,139 @@
+Link to logs: https://github.com/truefoundry/docker-build-test/actions/runs/11839234539/job/32990178943
+
+logs
+#0 building with "builder-1e5b98c9-b038-4f9d-93b4-81f0be2ab0b5" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile.uv-withoug-cache-mount
+#1 transferring dockerfile: 340B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10.2-slim
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10.2-slim
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 importing cache manifest from local:1695450880314006356
+#5 inferred cache manifest type: application/vnd.oci.image.index.v1+json done
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/library/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5
+#6 resolve docker.io/library/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 50.45kB 0.0s done
+#7 DONE 0.0s
+
+#8 [3/7] RUN echo "Starting the build"
+#8 CACHED
+
+#9 [4/7] COPY ./requirements.txt /app/requirements.txt
+#9 CACHED
+
+#10 [2/7] WORKDIR /app
+#10 CACHED
+
+#11 [5/7] RUN pip install uv
+#11 CACHED
+
+#12 [6/7] RUN uv pip install -r requirements.txt --system
+#12 sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 11.53MB / 31.37MB 0.2s
+#12 sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 25.17MB / 31.37MB 0.3s
+#12 sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 31.37MB / 31.37MB 0.4s done
+#12 extracting sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c
+#12 extracting sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 3.2s done
+#12 sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 1.08MB / 1.08MB 0.0s done
+#12 extracting sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 0.1s done
+#12 sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 10.49MB / 11.22MB 0.2s
+#12 sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 11.22MB / 11.22MB 0.2s done
+#12 extracting sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e
+#12 extracting sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 0.3s done
+#12 sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 235B / 235B done
+#12 extracting sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 done
+#12 sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 2.64MB / 2.64MB 0.0s done
+#12 extracting sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7
+#12 extracting sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 0.2s done
+#12 sha256:c2a6b72e3ca0e962b92362c1287b6f2a9915aa3b25506afbe4c88cd5077de2f2 93B / 93B done
+#12 extracting sha256:c2a6b72e3ca0e962b92362c1287b6f2a9915aa3b25506afbe4c88cd5077de2f2 done
+#12 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B done
+#12 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#12 sha256:6d414d43237f160a41cbdc0ecfbf918e1d1c3c959976b73bc208b3ca161feab2 288B / 288B done
+#12 extracting sha256:6d414d43237f160a41cbdc0ecfbf918e1d1c3c959976b73bc208b3ca161feab2 done
+#12 sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f 12.58MB / 31.00MB 0.2s
+#12 sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f 27.26MB / 31.00MB 0.3s
+#12 sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f 31.00MB / 31.00MB 0.4s done
+#12 extracting sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f
+#12 extracting sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f 0.4s done
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 10.49MB / 3.34GB 0.2s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 189.79MB / 3.34GB 2.3s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 369.22MB / 3.34GB 4.4s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 536.87MB / 3.34GB 7.8s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 709.71MB / 3.34GB 10.7s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 877.66MB / 3.34GB 12.6s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.05GB / 3.34GB 14.7s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.22GB / 3.34GB 16.7s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.39GB / 3.34GB 18.8s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.56GB / 3.34GB 23.7s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.74GB / 3.34GB 25.8s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 1.91GB / 3.34GB 27.9s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.10GB / 3.34GB 30.0s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.27GB / 3.34GB 32.1s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.44GB / 3.34GB 34.7s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.62GB / 3.34GB 39.2s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.79GB / 3.34GB 41.1s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 2.96GB / 3.34GB 43.1s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 3.13GB / 3.34GB 45.0s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 3.30GB / 3.34GB 47.1s
+#12 sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 3.34GB / 3.34GB 50.6s done
+#12 extracting sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b
+#12 extracting sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b 62.7s done
+#12 CACHED
+
+#13 [7/7] COPY . /app/
+#13 DONE 0.3s
+
+#14 exporting to image
+#14 exporting layers 0.0s done
+#14 exporting manifest sha256:926a7989793968e242cf3180685b6efaf958cd9f3c414225ed9bf5701d1c82a7 done
+#14 exporting config sha256:ab2ccdd2065b3023385a12b04b745639fdda17def754d4f251dff726a1151ee1 done
+#14 exporting attestation manifest sha256:7624ae03fcd13bba44269fa41cfe87fb63b41c8c5817b95113d36fa73c8fae3f done
+#14 exporting manifest list sha256:0d2c27c40d1f414f772dd100b01f7b9eb6e01b0f72912016b6f9065b7d3e4168 done
+#14 pushing layers
+#14 ...
+
+#15 [auth] build-with-uv:pull tfy-internal-images/build-with-uv:pull,push token for tfy.jfrog.io
+#15 DONE 0.0s
+
+#14 exporting to image
+#14 pushing layers 1.3s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/build-with-uv:latest@sha256:0d2c27c40d1f414f772dd100b01f7b9eb6e01b0f72912016b6f9065b7d3e4168
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/build-with-uv:latest@sha256:0d2c27c40d1f414f772dd100b01f7b9eb6e01b0f72912016b6f9065b7d3e4168 1.3s done
+#14 DONE 2.8s
+
+#16 exporting cache to client directory
+#16 preparing build cache for export 0.0s done
+#16 writing layer sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 done
+#16 writing layer sha256:1b18eaedfbc5daed05915827ba17565bf54556622c5fe54983f48a7ecec79a7f done
+#16 writing layer sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#16 writing layer sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 done
+#16 writing layer sha256:6d414d43237f160a41cbdc0ecfbf918e1d1c3c959976b73bc208b3ca161feab2 done
+#16 writing layer sha256:745e1de6ea15ec4a81b393e9943b0cd92b5d08e27817e9b56ba3fc5ef897fe9b done
+#16 writing layer sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 done
+#16 writing layer sha256:c2a6b72e3ca0e962b92362c1287b6f2a9915aa3b25506afbe4c88cd5077de2f2 done
+#16 writing layer sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e done
+#16 writing layer sha256:f2b8af707714cd99abe4d315d5ae7fda7920ecbb8710297c73e888e90158922a done
+#16 writing layer sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c done
+#16 writing config sha256:38dab493aa302e5b8e39828b025e29a5924f08ff3129fe50667da8af31cffdba done
+#16 writing cache manifest sha256:ec8fe98afed9b778beacccc73cde2fe36b305c1245987e6f8477fb8a92e1e20f done
+#16 DONE 0.0s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s

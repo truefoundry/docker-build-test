@@ -1,0 +1,74 @@
+Link to logs: https://internal.devtest.truefoundry.tech/deployments/cm3qw9jr001ne01t7c7phdrhp?tab=deployments&logs=cm3qxg8gn052601t7h33u09v8
+
+logs
+
+#0 building with "remote-kubernetes" instance using remote driver
+#1 [internal] load build definition from Dockerfile.pip-without-cache-mount
+#1 transferring dockerfile: 362B done
+#1 DONE 0.0s
+#2 [internal] load metadata for docker.io/library/python:3.10.2-slim
+#2 DONE 0.4s
+#3 [internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.0s
+#4 [internal] load build context
+#4 DONE 0.0s
+#5 [1/6] FROM docker.io/library/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5
+#5 resolve docker.io/library/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5 done
+#5 DONE 0.0s
+#6 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull token for tfy.jfrog.io
+#6 DONE 0.0s
+#7 importing cache manifest from tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:cache-latest
+#7 inferred cache manifest type: application/vnd.oci.image.manifest.v1+json done
+#7 DONE 0.4s
+#4 [internal] load build context
+#4 transferring context: 349.47kB 0.1s done
+#4 DONE 0.1s
+#8 [4/6] COPY ./requirements.txt /app/requirements.txt
+#8 CACHED
+#9 [2/6] WORKDIR /app
+#9 CACHED
+#10 [3/6] RUN echo "Starting the build"
+#10 CACHED
+#11 [5/6] RUN pip install -r requirements.txt
+#11 CACHED
+#12 [6/6] COPY . /app/
+#12 DONE 0.0s
+#13 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull,push tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull token for tfy.jfrog.io
+#13 DONE 0.0s
+#14 exporting to image
+#14 exporting layers 0.0s done
+#14 exporting manifest sha256:a5038a26988611f3c89225415933d386cce97d165822a9ac11ed796a858a2739 done
+#14 exporting config sha256:d61555fd59b9c2ea0031eed1334b98b7b3882738ed047b48d4d4eb30bd20e704 done
+#14 exporting attestation manifest sha256:971812cf7a848c80e92925eb5bb204b1b43c2f6193efc9bcd68612ca30a54fd8 done
+#14 exporting manifest list sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc done
+#14 pushing layers
+#14 pushing layers 0.5s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:2d71927b1ffd1e2024e0d60f4f76cc18e36c9324-2@sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:2d71927b1ffd1e2024e0d60f4f76cc18e36c9324-2@sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc 1.0s done
+#14 pushing layers 0.0s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:2d71927b1ffd1e2024e0d60f4f76cc18e36c9324-2@sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc 0.2s done
+#14 pushing layers 0.1s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:latest@sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:latest@sha256:0a4e95ab5f843227e4b4da8448ea58ac00e964c0a0d4ebd64136a64ffec135fc 0.2s done
+#14 DONE 2.0s
+#15 exporting cache to registry
+#15 preparing build cache for export
+#15 writing layer sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 0.0s done
+#15 writing layer sha256:1dd7676172fa2c57596a0b9db08d27561e217d6fc2d29c07b99af86c478ee12e 0.0s done
+#15 writing layer sha256:43bff2ffa8199edd9caad294c5da69eab03382b100ec33de44cde68f1ee4205e 0.0s done
+#15 writing layer sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 0.0s done
+#15 writing layer sha256:6af04ebc8db5f9f95d704da1bece5cecd2db1ab790f1cb39d8c47aa9640bafec 0.0s done
+#15 writing layer sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 0.0s done
+#15 writing layer sha256:9639bec064e0617539b4684204258c441086d0ccb557dac55faf40c69535b0de
+#15 writing layer sha256:9639bec064e0617539b4684204258c441086d0ccb557dac55faf40c69535b0de 0.0s done
+#15 writing layer sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 0.0s done
+#15 writing layer sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 0.0s done
+#15 writing layer sha256:ffd32f64a7d013251f8bf363c83ad4e5aeb638fba799deb8195a4b1169ff2200 0.0s done
+#15 writing config sha256:65c3134b511603e8828f52f7857c32c5f76d3b12c267cf69a9462c30a35311db 0.1s done
+#15 writing cache image manifest sha256:27fc1e595fbc9266e0d74378ed1c489bf531c6381b1e0f1404f2bf3763872454
+#15 preparing build cache for export 0.6s done
+#15 writing cache image manifest sha256:27fc1e595fbc9266e0d74378ed1c489bf531c6381b1e0f1404f2bf3763872454 0.3s done
+#15 DONE 0.6s
+Time taken to build the image: 26 seconds
+[==== Docker logs end ====]

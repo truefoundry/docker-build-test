@@ -1,4 +1,4 @@
-FROM tfy.jfrog.io/tfy-mirror/library/python:3.10.2-slim
+FROM tfy.jfrog.io/tfy-mirror/python:3.10.2-slim
 
 WORKDIR /app
 

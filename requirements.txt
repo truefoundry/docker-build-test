@@ -6,10 +6,10 @@
 # These are updated requirements to test docker build cache with mount
 
 vllm==0.5.4
-
-huggingface-hub==0.24.6
-
-fastapi[standard]==0.109.1
 transformers==4.43.3
 
+
+fastapi[standard]==0.109.1
+
+huggingface-hub==0.24.6
 

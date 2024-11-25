@@ -8,11 +8,10 @@
 
 huggingface-hub==0.24.6
 
-vllm==0.5.4
-
 
 fastapi[standard]==0.109.1
 
 transformers==4.43.3
+vllm==0.5.4
 
 

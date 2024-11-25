@@ -10,7 +10,7 @@ app = FastAPI()
 class RequestModel(BaseModel):
    input: str
 
-@app.post("/infer-llama-model3.2:3b")
+@app.post("/infer-llama-model3.2:8b")
 def get_response(request: RequestModel):
    prompt = request.input
    response = pipe(prompt)

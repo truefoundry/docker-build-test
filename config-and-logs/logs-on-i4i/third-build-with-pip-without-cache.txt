@@ -1,0 +1,312 @@
+Link to logs: https://internal.devtest.truefoundry.tech/deployments/cm3qw9jr001ne01t7c7phdrhp?tab=deployments&logs=cm3wdxoff04ne01tgdkvlckyx
+
+logs
+
+#0 building with "remote-kubernetes" instance using remote driver
+#1 [internal] load build definition from Dockerfile.pip-without-cache-mount
+#1 transferring dockerfile: 386B done
+#1 DONE 0.0s
+#2 [auth] python:pull tfy-mirror/python:pull token for tfy.jfrog.io
+#2 DONE 0.0s
+#3 [internal] load metadata for tfy.jfrog.io/tfy-mirror/python:3.10.2-slim
+#3 DONE 0.3s
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+#5 [internal] load build context
+#5 DONE 0.0s
+#6 [1/6] FROM tfy.jfrog.io/tfy-mirror/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5
+#6 resolve tfy.jfrog.io/tfy-mirror/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5 done
+#6 DONE 0.0s
+#7 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull token for tfy.jfrog.io
+#7 DONE 0.0s
+#8 importing cache manifest from tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:cache-latest
+#8 inferred cache manifest type: application/vnd.oci.image.manifest.v1+json done
+#8 DONE 0.2s
+#5 [internal] load build context
+#5 transferring context: 728.26kB 0.1s done
+#5 DONE 0.1s
+#9 [2/6] WORKDIR /app
+#9 CACHED
+#10 [3/6] RUN echo "Starting the build"
+#10 CACHED
+#11 [4/6] COPY ./requirements.txt /app/requirements.txt
+#11 DONE 0.0s
+#12 [5/6] RUN pip install -r requirements.txt
+#12 1.280 Collecting fastapi[standard]==0.109.1
+#12 1.306   Downloading fastapi-0.109.1-py3-none-any.whl (92 kB)
+#12 1.382 Collecting huggingface-hub==0.24.6
+#12 1.387   Downloading huggingface_hub-0.24.6-py3-none-any.whl (417 kB)
+#12 1.479 Collecting transformers==4.43.3
+#12 1.500   Downloading transformers-4.43.3-py3-none-any.whl (9.4 MB)
+#12 1.630 Collecting vllm==0.5.4
+#12 1.638   Downloading vllm-0.5.4-cp38-abi3-manylinux1_x86_64.whl (124.2 MB)
+#12 3.021 WARNING: fastapi 0.109.1 does not provide the extra 'standard'
+#12 3.388 Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
+#12 3.396   Downloading pydantic-2.10.1-py3-none-any.whl (455 kB)
+#12 3.453 Collecting starlette<0.36.0,>=0.35.0
+#12 3.458   Downloading starlette-0.35.1-py3-none-any.whl (71 kB)
+#12 3.490 Collecting typing-extensions>=4.8.0
+#12 3.494   Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+#12 3.606 Collecting filelock
+#12 3.611   Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+#12 3.719 Collecting pyyaml>=5.1
+#12 3.724   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+#12 3.809 Collecting tqdm>=4.42.1
+#12 3.814   Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+#12 3.848 Collecting packaging>=20.9
+#12 3.852   Downloading packaging-24.2-py3-none-any.whl (65 kB)
+#12 3.905 Collecting requests
+#12 3.910   Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#12 3.958 Collecting fsspec>=2023.5.0
+#12 3.963   Downloading fsspec-2024.10.0-py3-none-any.whl (179 kB)
+#12 4.782 Collecting numpy>=1.17
+#12 4.788   Downloading numpy-2.1.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+#12 5.278 Collecting safetensors>=0.4.1
+#12 5.283   Downloading safetensors-0.4.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (435 kB)
+#12 5.860 Collecting tokenizers<0.20,>=0.19
+#12 5.869   Downloading tokenizers-0.19.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+#12 6.989 Collecting regex!=2019.12.17
+#12 6.995   Downloading regex-2024.11.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (781 kB)
+#12 7.542 Collecting pillow
+#12 7.553   Downloading pillow-11.0.0-cp310-cp310-manylinux_2_28_x86_64.whl (4.4 MB)
+#12 7.715 Collecting ninja
+#12 7.721   Downloading ninja-1.11.1.2-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (422 kB)
+#12 8.074 Collecting cmake>=3.21
+#12 8.082   Downloading cmake-3.31.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27.8 MB)
+#12 8.407 Collecting tiktoken>=0.6.0
+#12 8.416   Downloading tiktoken-0.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+#12 8.722 Collecting ray>=2.9
+#12 8.729   Downloading ray-2.39.0-cp310-cp310-manylinux2014_x86_64.whl (66.3 MB)
+#12 9.665 Collecting lm-format-enforcer==0.10.3
+#12 9.671   Downloading lm_format_enforcer-0.10.3-py3-none-any.whl (43 kB)
+#12 9.707 Collecting outlines<0.1,>=0.0.43
+#12 9.713   Downloading outlines-0.0.46-py3-none-any.whl (101 kB)
+#12 9.736 Collecting vllm-flash-attn==2.6.1
+#12 9.744   Downloading vllm_flash_attn-2.6.1-cp310-cp310-manylinux1_x86_64.whl (75.9 MB)
+#12 10.59 Collecting prometheus-client>=0.18.0
+#12 10.59   Downloading prometheus_client-0.21.0-py3-none-any.whl (54 kB)
+#12 10.71 Collecting xformers==0.0.27.post2
+#12 10.72   Downloading xformers-0.0.27.post2-cp310-cp310-manylinux2014_x86_64.whl (20.8 MB)
+#12 10.95 Collecting py-cpuinfo
+#12 10.95   Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+#12 11.02 Collecting uvicorn[standard]
+#12 11.02   Downloading uvicorn-0.32.1-py3-none-any.whl (63 kB)
+#12 11.75 Collecting pyzmq
+#12 11.75   Downloading pyzmq-26.2.0-cp310-cp310-manylinux_2_28_x86_64.whl (868 kB)
+#12 11.90 Collecting sentencepiece
+#12 11.91   Downloading sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+#12 13.28 Collecting aiohttp
+#12 13.29   Downloading aiohttp-3.11.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+#12 13.33 Collecting prometheus-fastapi-instrumentator>=7.0.0
+#12 13.34   Downloading prometheus_fastapi_instrumentator-7.0.0-py3-none-any.whl (19 kB)
+#12 13.44 Collecting openai
+#12 13.45   Downloading openai-1.55.0-py3-none-any.whl (389 kB)
+#12 13.47 Collecting numpy>=1.17
+#12 13.48   Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+#12 13.74 Collecting torch==2.4.0
+#12 13.77   Downloading torch-2.4.0-cp310-cp310-manylinux1_x86_64.whl (797.2 MB)
+#12 22.04 Collecting nvidia-ml-py
+#12 22.05   Downloading nvidia_ml_py-12.560.30-py3-none-any.whl (40 kB)
+#12 22.25 Collecting psutil
+#12 22.26   Downloading psutil-6.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+#12 22.45 Collecting torchvision==0.19
+#12 22.46   Downloading torchvision-0.19.0-cp310-cp310-manylinux1_x86_64.whl (7.0 MB)
+#12 22.54 Collecting interegular>=0.3.2
+#12 22.55   Downloading interegular-0.3.3-py37-none-any.whl (23 kB)
+#12 22.62 Collecting nvidia-cuda-nvrtc-cu12==12.1.105
+#12 22.62   Downloading nvidia_cuda_nvrtc_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (23.7 MB)
+#12 22.85 Collecting nvidia-nvtx-cu12==12.1.105
+#12 22.86   Downloading nvidia_nvtx_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (99 kB)
+#12 22.91 Collecting networkx
+#12 22.91   Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+#12 22.97 Collecting nvidia-curand-cu12==10.3.2.106
+#12 22.98   Downloading nvidia_curand_cu12-10.3.2.106-py3-none-manylinux1_x86_64.whl (56.5 MB)
+#12 23.62 Collecting nvidia-cublas-cu12==12.1.3.1
+#12 23.63   Downloading nvidia_cublas_cu12-12.1.3.1-py3-none-manylinux1_x86_64.whl (410.6 MB)
+#12 27.82 Collecting sympy
+#12 27.84   Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+#12 27.90 Collecting nvidia-cuda-cupti-cu12==12.1.105
+#12 27.90   Downloading nvidia_cuda_cupti_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (14.1 MB)
+#12 28.12 Collecting nvidia-cuda-runtime-cu12==12.1.105
+#12 28.13   Downloading nvidia_cuda_runtime_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (823 kB)
+#12 28.16 Collecting nvidia-cudnn-cu12==9.1.0.70
+#12 28.16   Downloading nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
+#12 33.12 Collecting nvidia-cusolver-cu12==11.4.5.107
+#12 33.13   Downloading nvidia_cusolver_cu12-11.4.5.107-py3-none-manylinux1_x86_64.whl (124.2 MB)
+#12 34.35 Collecting jinja2
+#12 34.35   Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+#12 34.39 Collecting nvidia-nccl-cu12==2.20.5
+#12 34.41   Downloading nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl (176.2 MB)
+#12 35.58 Collecting nvidia-cusparse-cu12==12.1.0.106
+#12 35.58   Downloading nvidia_cusparse_cu12-12.1.0.106-py3-none-manylinux1_x86_64.whl (196.0 MB)
+#12 37.65 Collecting triton==3.0.0
+#12 37.66   Downloading triton-3.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (209.4 MB)
+#12 39.73 Collecting nvidia-cufft-cu12==11.0.2.54
+#12 39.73   Downloading nvidia_cufft_cu12-11.0.2.54-py3-none-manylinux1_x86_64.whl (121.6 MB)
+#12 40.94 Collecting nvidia-nvjitlink-cu12
+#12 40.95   Downloading nvidia_nvjitlink_cu12-12.6.85-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (19.7 MB)
+#12 41.34 Collecting datasets
+#12 41.34   Downloading datasets-3.1.0-py3-none-any.whl (480 kB)
+#12 41.37 Collecting cloudpickle
+#12 41.38   Downloading cloudpickle-3.1.0-py3-none-any.whl (22 kB)
+#12 41.42 Collecting diskcache
+#12 41.43   Downloading diskcache-5.6.3-py3-none-any.whl (45 kB)
+#12 41.48 Collecting referencing
+#12 41.49   Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+#12 41.76 Collecting numba
+#12 41.77   Downloading numba-0.60.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+#12 41.81 Collecting lark
+#12 41.81   Downloading lark-1.2.2-py3-none-any.whl (111 kB)
+#12 41.83 Collecting pycountry
+#12 41.84   Downloading pycountry-24.6.1-py3-none-any.whl (6.3 MB)
+#12 41.90 Collecting nest-asyncio
+#12 41.91   Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+#12 41.96 Collecting jsonschema
+#12 41.97   Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+#12 41.98 Collecting pyairports
+#12 41.98   Downloading pyairports-2.1.1-py3-none-any.whl (371 kB)
+#12 44.10 Collecting pydantic-core==2.27.1
+#12 44.10   Downloading pydantic_core-2.27.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#12 44.13 Collecting annotated-types>=0.6.0
+#12 44.14   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+#12 44.51 Collecting frozenlist
+#12 44.52   Downloading frozenlist-1.5.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (241 kB)
+#12 44.70 Collecting msgpack<2.0.0,>=1.0.0
+#12 44.71   Downloading msgpack-1.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (378 kB)
+#12 44.73 Collecting aiosignal
+#12 44.73   Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+#12 45.22 Collecting protobuf!=3.19.5,>=3.15.3
+#12 45.23   Downloading protobuf-5.28.3-cp38-abi3-manylinux2014_x86_64.whl (316 kB)
+#12 45.33 Collecting click>=7.0
+#12 45.33   Downloading click-8.1.7-py3-none-any.whl (97 kB)
+#12 45.42 Collecting anyio<5,>=3.4.0
+#12 45.44   Downloading anyio-4.6.2.post1-py3-none-any.whl (90 kB)
+#12 45.49 Collecting idna>=2.8
+#12 45.49   Downloading idna-3.10-py3-none-any.whl (70 kB)
+#12 45.51 Collecting sniffio>=1.1
+#12 45.52   Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+#12 45.54 Collecting exceptiongroup>=1.0.2
+#12 45.54   Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+#12 45.80 Collecting charset-normalizer<4,>=2
+#12 45.81   Downloading charset_normalizer-3.4.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+#12 45.84 Collecting certifi>=2017.4.17
+#12 45.85   Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+#12 45.92 Collecting urllib3<3,>=1.21.1
+#12 45.92   Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+#12 46.01 Collecting aiohappyeyeballs>=2.3.0
+#12 46.02   Downloading aiohappyeyeballs-2.4.3-py3-none-any.whl (14 kB)
+#12 46.52 Collecting multidict<7.0,>=4.5
+#12 46.53   Downloading multidict-6.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (124 kB)
+#12 46.56 Collecting async-timeout<6.0,>=4.0
+#12 46.57   Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+#12 46.64 Collecting propcache>=0.2.0
+#12 46.64   Downloading propcache-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (208 kB)
+#12 46.74 Collecting attrs>=17.3.0
+#12 46.74   Downloading attrs-24.2.0-py3-none-any.whl (63 kB)
+#12 47.59 Collecting yarl<2.0,>=1.17.0
+#12 47.59   Downloading yarl-1.18.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (319 kB)
+#12 48.08 Collecting pyarrow>=15.0.0
+#12 48.08   Downloading pyarrow-18.0.0-cp310-cp310-manylinux_2_28_x86_64.whl (40.0 MB)
+#12 48.45 Collecting multiprocess<0.70.17
+#12 48.45   Downloading multiprocess-0.70.16-py310-none-any.whl (134 kB)
+#12 48.47 Collecting fsspec[http]<=2024.9.0,>=2023.1.0
+#12 48.47   Downloading fsspec-2024.9.0-py3-none-any.whl (179 kB)
+#12 48.84 Collecting pandas
+#12 48.84   Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+#12 49.20 Collecting xxhash
+#12 49.20   Downloading xxhash-3.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+#12 49.22 Collecting dill<0.3.9,>=0.3.0
+#12 49.23   Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+#12 49.53 Collecting MarkupSafe>=2.0
+#12 49.54   Downloading MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+#12 50.37 Collecting rpds-py>=0.7.1
+#12 50.38   Downloading rpds_py-0.21.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (360 kB)
+#12 50.40 Collecting jsonschema-specifications>=2023.03.6
+#12 50.41   Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+#12 50.66 Collecting llvmlite<0.44,>=0.43.0dev0
+#12 50.67   Downloading llvmlite-0.43.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
+#12 51.27 Collecting httpx<1,>=0.23.0
+#12 51.28   Downloading httpx-0.27.2-py3-none-any.whl (76 kB)
+#12 51.31 Collecting distro<2,>=1.7.0
+#12 51.32   Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+#12 51.45 Collecting jiter<1,>=0.4.0
+#12 51.46   Downloading jiter-0.7.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
+#12 51.52 Collecting httpcore==1.*
+#12 51.52   Downloading httpcore-1.0.7-py3-none-any.whl (78 kB)
+#12 51.55 Collecting h11<0.15,>=0.13
+#12 51.55   Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+#12 51.66 Collecting python-dateutil>=2.8.2
+#12 51.67   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#12 51.75 Collecting pytz>=2020.1
+#12 51.76   Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+#12 51.79 Collecting tzdata>=2022.7
+#12 51.80   Downloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+#12 51.83 Collecting six>=1.5
+#12 51.84   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#12 52.02 Collecting mpmath<1.4,>=1.1.0
+#12 52.03   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#12 52.15 Collecting httptools>=0.6.3
+#12 52.15   Downloading httptools-0.6.4-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (442 kB)
+#12 52.19 Collecting python-dotenv>=0.13
+#12 52.19   Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+#12 52.35 Collecting watchfiles>=0.13
+#12 52.36   Downloading watchfiles-1.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (442 kB)
+#12 52.67 Collecting websockets>=10.4
+#12 52.67   Downloading websockets-14.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (168 kB)
+#12 52.79 Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0
+#12 52.80   Downloading uvloop-0.21.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.8 MB)
+#12 54.11 Installing collected packages: typing-extensions, propcache, multidict, idna, frozenlist, yarl, urllib3, six, rpds-py, nvidia-nvjitlink-cu12, charset-normalizer, certifi, attrs, async-timeout, aiosignal, aiohappyeyeballs, tzdata, tqdm, sniffio, requests, referencing, pyyaml, pytz, python-dateutil, packaging, nvidia-cusparse-cu12, nvidia-cublas-cu12, numpy, mpmath, MarkupSafe, h11, fsspec, filelock, exceptiongroup, dill, aiohttp, xxhash, triton, sympy, pydantic-core, pyarrow, pandas, nvidia-nvtx-cu12, nvidia-nccl-cu12, nvidia-cusolver-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, networkx, multiprocess, llvmlite, jsonschema-specifications, jinja2, huggingface-hub, httpcore, click, anyio, annotated-types, websockets, watchfiles, uvloop, uvicorn, torch, tokenizers, starlette, safetensors, regex, python-dotenv, pydantic, pycountry, pyairports, protobuf, prometheus-client, pillow, numba, nest-asyncio, msgpack, lark, jsonschema, jiter, interegular, httpx, httptools, distro, diskcache, datasets, cloudpickle, xformers, vllm-flash-attn, transformers, torchvision, tiktoken, sentencepiece, ray, pyzmq, py-cpuinfo, psutil, prometheus-fastapi-instrumentator, outlines, openai, nvidia-ml-py, ninja, lm-format-enforcer, fastapi, cmake, vllm
+#12 115.0 Successfully installed MarkupSafe-3.0.2 aiohappyeyeballs-2.4.3 aiohttp-3.11.7 aiosignal-1.3.1 annotated-types-0.7.0 anyio-4.6.2.post1 async-timeout-5.0.1 attrs-24.2.0 certifi-2024.8.30 charset-normalizer-3.4.0 click-8.1.7 cloudpickle-3.1.0 cmake-3.31.1 datasets-3.1.0 dill-0.3.8 diskcache-5.6.3 distro-1.9.0 exceptiongroup-1.2.2 fastapi-0.109.1 filelock-3.16.1 frozenlist-1.5.0 fsspec-2024.9.0 h11-0.14.0 httpcore-1.0.7 httptools-0.6.4 httpx-0.27.2 huggingface-hub-0.24.6 idna-3.10 interegular-0.3.3 jinja2-3.1.4 jiter-0.7.1 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 lark-1.2.2 llvmlite-0.43.0 lm-format-enforcer-0.10.3 mpmath-1.3.0 msgpack-1.1.0 multidict-6.1.0 multiprocess-0.70.16 nest-asyncio-1.6.0 networkx-3.4.2 ninja-1.11.1.2 numba-0.60.0 numpy-1.26.4 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-runtime-cu12-12.1.105 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-ml-py-12.560.30 nvidia-nccl-cu12-2.20.5 nvidia-nvjitlink-cu12-12.6.85 nvidia-nvtx-cu12-12.1.105 openai-1.55.0 outlines-0.0.46 packaging-24.2 pandas-2.2.3 pillow-11.0.0 prometheus-client-0.21.0 prometheus-fastapi-instrumentator-7.0.0 propcache-0.2.0 protobuf-5.28.3 psutil-6.1.0 py-cpuinfo-9.0.0 pyairports-2.1.1 pyarrow-18.0.0 pycountry-24.6.1 pydantic-2.10.1 pydantic-core-2.27.1 python-dateutil-2.9.0.post0 python-dotenv-1.0.1 pytz-2024.2 pyyaml-6.0.2 pyzmq-26.2.0 ray-2.39.0 referencing-0.35.1 regex-2024.11.6 requests-2.32.3 rpds-py-0.21.0 safetensors-0.4.5 sentencepiece-0.2.0 six-1.16.0 sniffio-1.3.1 starlette-0.35.1 sympy-1.13.3 tiktoken-0.8.0 tokenizers-0.19.1 torch-2.4.0 torchvision-0.19.0 tqdm-4.67.1 transformers-4.43.3 triton-3.0.0 typing-extensions-4.12.2 tzdata-2024.2 urllib3-2.2.3 uvicorn-0.32.1 uvloop-0.21.0 vllm-0.5.4 vllm-flash-attn-2.6.1 watchfiles-1.0.0 websockets-14.1 xformers-0.0.27.post2 xxhash-3.5.0 yarl-1.18.0
+#12 115.0 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#12 115.1 WARNING: You are using pip version 21.2.4; however, version 24.3.1 is available.
+#12 115.1 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+#12 DONE 117.6s
+#13 [6/6] COPY . /app/
+#13 DONE 0.2s
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 24.0s done
+#14 ...
+#15 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull,push tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull token for tfy.jfrog.io
+#15 DONE 0.0s
+#14 exporting to image
+#14 exporting manifest sha256:e433ffc53e017cae69206facf9d55a8242e7437ea325cd568d6caa7af3326152 done
+#14 exporting config sha256:c1554eb8fff2d113291eb91f4c25e2f078da323c00a404f456b5f46f56054998 done
+#14 exporting attestation manifest sha256:7221756789edd5cf30de1d82c31bd83a62f73f69ea2f3f0e537b15e6091f85cc done
+#14 exporting manifest list sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb done
+#14 pushing layers
+#14 pushing layers 74.8s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:80dcd9fbe66adca6383254dae0ee0d0b2e1a8841-23@sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb
+#14 ...
+#16 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull,push tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:pull token for tfy.jfrog.io
+#16 DONE 0.0s
+#14 exporting to image
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:80dcd9fbe66adca6383254dae0ee0d0b2e1a8841-23@sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb 1.4s done
+#14 pushing layers 0.1s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:80dcd9fbe66adca6383254dae0ee0d0b2e1a8841-23@sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb 0.1s done
+#14 pushing layers 0.1s done
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:latest@sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb
+#14 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-pip-and-nvme-hdrhp:latest@sha256:9a1528377e695378618d7266cd4dc041bf6cda583b193759c2d6c58a279616eb 0.2s done
+#14 DONE 100.7s
+#17 exporting cache to registry
+#17 preparing build cache for export
+#17 writing layer sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 0.0s done
+#17 writing layer sha256:1dd7676172fa2c57596a0b9db08d27561e217d6fc2d29c07b99af86c478ee12e 0.0s done
+#17 writing layer sha256:43bff2ffa8199edd9caad294c5da69eab03382b100ec33de44cde68f1ee4205e 0.0s done
+#17 writing layer sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 0.0s done
+#17 writing layer sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 0.0s done
+#17 writing layer sha256:a849df8131f1141550dcaf60aaa07207f7081acd3ba9c47798d16aa760933921 0.0s done
+#17 writing layer sha256:c097ed8c79f3ea680793eb5f8966acf35c8aa7a56027c71964e0f288d1094a89
+#17 writing layer sha256:c097ed8c79f3ea680793eb5f8966acf35c8aa7a56027c71964e0f288d1094a89 0.0s done
+#17 writing layer sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 0.0s done
+#17 writing layer sha256:f574f38a6f357b35ec82791c673650fd87b5ad622eef917e0edc9d808184a889 0.0s done
+#17 writing layer sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 0.0s done
+#17 writing config sha256:1a6755baafb64c5bcf6f1da3ac996c1e893de59d34a54291449fc8a23ce584da
+#17 writing config sha256:1a6755baafb64c5bcf6f1da3ac996c1e893de59d34a54291449fc8a23ce584da 0.2s done
+#17 writing cache image manifest sha256:cee127adb86d4bca65bbe761d221d4dee6b1dd7591a581c804121cfdc97a3dc7
+#17 preparing build cache for export 0.6s done
+#17 writing cache image manifest sha256:cee127adb86d4bca65bbe761d221d4dee6b1dd7591a581c804121cfdc97a3dc7 0.3s done
+#17 DONE 0.6s
+Time taken to build the image: 233 seconds
+[==== Docker logs end ====]

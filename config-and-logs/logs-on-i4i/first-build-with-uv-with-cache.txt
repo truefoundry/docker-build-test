@@ -1,0 +1,210 @@
+Link to logs: https://internal.devtest.truefoundry.tech/deployments/cm3qwszlw039301t7017vce7c?tab=deployments&logs=cm3wd12eq01y001t80g53dwsu
+
+logs
+
+
+#0 building with "remote-kubernetes" instance using remote driver
+#1 [internal] load build definition from Dockerfile.uv-with-cache-mount
+#1 transferring dockerfile: 681B done
+#1 DONE 0.0s
+#2 [auth] python:pull tfy-mirror/python:pull token for tfy.jfrog.io
+#2 DONE 0.0s
+#3 [internal] load metadata for tfy.jfrog.io/tfy-mirror/python:3.10.2-slim
+#3 DONE 0.3s
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+#5 [internal] load build context
+#5 DONE 0.0s
+#6 [stage-0 1/9] FROM tfy.jfrog.io/tfy-mirror/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5
+#6 resolve tfy.jfrog.io/tfy-mirror/python:3.10.2-slim@sha256:6faf002f0bce2ce81bec4a2253edddf0326dad23fe4e95e90d7790eaee653da5 done
+#6 DONE 0.0s
+#7 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:pull tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:pull token for tfy.jfrog.io
+#7 DONE 0.0s
+#8 importing cache manifest from tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:cache-latest
+#8 inferred cache manifest type: application/vnd.oci.image.manifest.v1+json done
+#8 DONE 0.1s
+#5 [internal] load build context
+#5 transferring context: 723.80kB 0.2s done
+#5 DONE 0.2s
+#9 [stage-0 2/9] WORKDIR /app
+#9 CACHED
+#10 [stage-0 3/9] RUN echo "Starting the build again"
+#10 CACHED
+#11 [stage-0 4/9] COPY ./requirements.txt /app/requirements.txt
+#11 CACHED
+#12 [stage-0 5/9] RUN --mount=type=cache,target=/root/.cache/uv1 ls -ltr /root/.cache/uv1
+#12 0.117 total 0
+#12 DONE 0.1s
+#13 [stage-0 6/9] RUN --mount=type=cache,target=/root/.cache/pip1 pip install --cache-dir=/root/.cache/pip1 uv
+#13 1.512 Collecting uv
+#13 1.543   Downloading uv-0.5.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.5 MB)
+#13 1.702 Installing collected packages: uv
+#13 1.898 Successfully installed uv-0.5.4
+#13 1.898 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#13 1.988 WARNING: You are using pip version 21.2.4; however, version 24.3.1 is available.
+#13 1.988 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+#13 DONE 2.1s
+#14 [stage-0 7/9] RUN uv cache dir
+#14 0.104 /root/.cache/uv
+#14 DONE 0.2s
+#15 [stage-0 8/9] RUN --mount=type=cache,target=/root/.cache/uv1 uv pip install --cache-dir=/root/.cache/uv1 -r requirements.txt --system
+#15 0.168 Using Python 3.10.2 environment at /usr/local
+#15 0.988 Resolved 109 packages in 819ms
+#15 25.98 Prepared 109 packages in 24.98s
+#15 27.79 Installed 109 packages in 1.80s
+#15 27.79  + aiohappyeyeballs==2.4.3
+#15 27.79  + aiohttp==3.11.7
+#15 27.79  + aiosignal==1.3.1
+#15 27.79  + annotated-types==0.7.0
+#15 27.79  + anyio==4.6.2.post1
+#15 27.79  + async-timeout==5.0.1
+#15 27.79  + attrs==24.2.0
+#15 27.79  + certifi==2024.8.30
+#15 27.79  + charset-normalizer==3.4.0
+#15 27.79  + click==8.1.7
+#15 27.79  + cloudpickle==3.1.0
+#15 27.79  + cmake==3.31.1
+#15 27.79  + datasets==2.14.4
+#15 27.79  + dill==0.3.7
+#15 27.79  + diskcache==5.6.3
+#15 27.79  + distro==1.9.0
+#15 27.79  + exceptiongroup==1.2.2
+#15 27.79  + fastapi==0.109.1
+#15 27.79  + filelock==3.16.1
+#15 27.79  + frozenlist==1.5.0
+#15 27.79  + fsspec==2024.10.0
+#15 27.79  + h11==0.14.0
+#15 27.79  + httpcore==1.0.7
+#15 27.79  + httptools==0.6.4
+#15 27.79  + httpx==0.27.2
+#15 27.79  + huggingface-hub==0.24.6
+#15 27.79  + idna==3.10
+#15 27.79  + interegular==0.3.3
+#15 27.79  + jinja2==3.1.4
+#15 27.79  + jiter==0.7.1
+#15 27.79  + jsonschema==4.23.0
+#15 27.79  + jsonschema-specifications==2024.10.1
+#15 27.79  + lark==1.2.2
+#15 27.79  + llvmlite==0.43.0
+#15 27.79  + lm-format-enforcer==0.10.3
+#15 27.79  + markupsafe==3.0.2
+#15 27.79  + mpmath==1.3.0
+#15 27.79  + msgpack==1.1.0
+#15 27.79  + multidict==6.1.0
+#15 27.79  + multiprocess==0.70.15
+#15 27.79  + nest-asyncio==1.6.0
+#15 27.79  + networkx==3.4.2
+#15 27.79  + ninja==1.11.1.2
+#15 27.79  + numba==0.60.0
+#15 27.79  + numpy==1.26.4
+#15 27.79  + nvidia-cublas-cu12==12.1.3.1
+#15 27.79  + nvidia-cuda-cupti-cu12==12.1.105
+#15 27.79  + nvidia-cuda-nvrtc-cu12==12.1.105
+#15 27.79  + nvidia-cuda-runtime-cu12==12.1.105
+#15 27.79  + nvidia-cudnn-cu12==9.1.0.70
+#15 27.79  + nvidia-cufft-cu12==11.0.2.54
+#15 27.79  + nvidia-curand-cu12==10.3.2.106
+#15 27.79  + nvidia-cusolver-cu12==11.4.5.107
+#15 27.79  + nvidia-cusparse-cu12==12.1.0.106
+#15 27.79  + nvidia-ml-py==12.560.30
+#15 27.79  + nvidia-nccl-cu12==2.20.5
+#15 27.79  + nvidia-nvjitlink-cu12==12.6.85
+#15 27.79  + nvidia-nvtx-cu12==12.1.105
+#15 27.79  + openai==1.55.0
+#15 27.79  + outlines==0.0.46
+#15 27.79  + packaging==24.2
+#15 27.79  + pandas==2.2.3
+#15 27.79  + pillow==11.0.0
+#15 27.79  + prometheus-client==0.21.0
+#15 27.79  + prometheus-fastapi-instrumentator==7.0.0
+#15 27.79  + propcache==0.2.0
+#15 27.79  + protobuf==5.28.3
+#15 27.79  + psutil==6.1.0
+#15 27.79  + py-cpuinfo==9.0.0
+#15 27.79  + pyairports==2.1.1
+#15 27.79  + pyarrow==18.0.0
+#15 27.79  + pycountry==24.6.1
+#15 27.79  + pydantic==2.10.1
+#15 27.79  + pydantic-core==2.27.1
+#15 27.79  + python-dateutil==2.9.0.post0
+#15 27.79  + python-dotenv==1.0.1
+#15 27.79  + pytz==2024.2
+#15 27.79  + pyyaml==6.0.2
+#15 27.79  + pyzmq==26.2.0
+#15 27.79  + ray==2.39.0
+#15 27.79  + referencing==0.35.1
+#15 27.79  + regex==2024.11.6
+#15 27.79  + requests==2.32.3
+#15 27.79  + rpds-py==0.21.0
+#15 27.79  + safetensors==0.4.5
+#15 27.79  + sentencepiece==0.2.0
+#15 27.79  + six==1.16.0
+#15 27.79  + sniffio==1.3.1
+#15 27.79  + starlette==0.35.1
+#15 27.79  + sympy==1.13.3
+#15 27.79  + tiktoken==0.8.0
+#15 27.79  + tokenizers==0.19.1
+#15 27.79  + torch==2.4.0
+#15 27.79  + torchvision==0.19.0
+#15 27.79  + tqdm==4.67.1
+#15 27.79  + transformers==4.43.3
+#15 27.79  + triton==3.0.0
+#15 27.79  + typing-extensions==4.12.2
+#15 27.79  + tzdata==2024.2
+#15 27.79  + urllib3==2.2.3
+#15 27.79  + uvicorn==0.32.1
+#15 27.79  + uvloop==0.21.0
+#15 27.79  + vllm==0.5.4
+#15 27.79  + vllm-flash-attn==2.6.1
+#15 27.79  + watchfiles==1.0.0
+#15 27.79  + websockets==14.1
+#15 27.79  + xformers==0.0.27.post2
+#15 27.79  + xxhash==3.5.0
+#15 27.79  + yarl==1.18.0
+#15 27.79 warning: The package `fastapi==0.109.1` does not have an extra named `standard`
+#15 DONE 33.3s
+#16 [stage-0 9/9] COPY . /app/
+#16 DONE 0.1s
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 14.6s done
+#17 ...
+#18 [auth] tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:pull,push tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:pull token for tfy.jfrog.io
+#18 DONE 0.0s
+#17 exporting to image
+#17 exporting manifest sha256:a8ea8e8f00b20473be8293e1912bdfda3e29380f55b455405e0a6846e63f1fc9 done
+#17 exporting config sha256:4201aeb11ff2854cdb44291e4197df747206ae4e269dd9e36ff44fdd27a55f05 done
+#17 exporting attestation manifest sha256:bd5e0f4a3e3958903f60e93bcf1632940d5c05d7988eab55f2a8123c1a98735d done
+#17 exporting manifest list sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c done
+#17 pushing layers
+#17 pushing layers 51.5s done
+#17 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:4410073e65d90c9f16d2918438be5208c537f60d-6@sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c
+#17 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:4410073e65d90c9f16d2918438be5208c537f60d-6@sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c 0.9s done
+#17 pushing layers 0.1s done
+#17 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:4410073e65d90c9f16d2918438be5208c537f60d-6@sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c 0.1s done
+#17 pushing layers 0.1s done
+#17 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:latest@sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c
+#17 pushing manifest for tfy.jfrog.io/tfy-internal-images/tfy-mitanshu-build-test-build-test-with-uv-cache-mt-nvme-vce7c:latest@sha256:874acc0a60049cef2614571ad8f088684d6a359ea5a17d7a8e5f0bdec6035b2c 0.2s done
+#17 DONE 67.5s
+#19 exporting cache to registry
+#19 preparing build cache for export
+#19 writing layer sha256:0db4d52e41af9884b9b4048c06a7276acdf22602b80b7cf1de28c8fe3b1a38e0 0.0s done
+#19 writing layer sha256:1dd7676172fa2c57596a0b9db08d27561e217d6fc2d29c07b99af86c478ee12e done
+#19 writing layer sha256:3aa2ba57995c33eee3ff81dd6a5790485ed0f5e1596825c76c53cc457ce87ca7 0.0s done
+#19 writing layer sha256:43bff2ffa8199edd9caad294c5da69eab03382b100ec33de44cde68f1ee4205e 0.0s done
+#19 writing layer sha256:51606b1d16e3e7d2917554d74c73a3212fbf9166c307100c11fb26e87b587df7 0.0s done
+#19 writing layer sha256:537ba547fff188edf6d2ca1b2dc80fb6d938d47a5551bd36d6bd0db21d98d743 0.0s done
+#19 writing layer sha256:680c4a9c2c8fc52aa96a833f26652ec9addfdce978adc39650c13af44eb4f923
+#19 writing layer sha256:680c4a9c2c8fc52aa96a833f26652ec9addfdce978adc39650c13af44eb4f923 0.0s done
+#19 writing layer sha256:92c59ec44e08abbd071efa42d226c5bdb8396ee193a53e02c4232296ef855372 0.0s done
+#19 writing layer sha256:d87688ad24ef168e105068280a296bbb7e70647be7fb64a788b69e35271a216e 0.0s done
+#19 writing layer sha256:e2df9d0e0d0e759d3f7645a5770258f67587a95ff8a90434c4f67f50896fc39b 0.0s done
+#19 writing layer sha256:f7a1c6dad28192bd417b78079d6ddc03cbca6d5ea46bba12769b235b6353c00c 0.0s done
+#19 writing config sha256:9c60be0fcd3623fae8df64a34be3198d631d6f27fd585b260330b08880474e75 0.1s done
+#19 writing cache image manifest sha256:2ecaa675973358bc6f595044e65c31e150aa4f4242b2f4f68f01f9f45cbba523
+#19 preparing build cache for export 0.6s done
+#19 writing cache image manifest sha256:2ecaa675973358bc6f595044e65c31e150aa4f4242b2f4f68f01f9f45cbba523 0.3s done
+#19 DONE 0.6s
+Time taken to build the image: 119 seconds
+[==== Docker logs end ====]

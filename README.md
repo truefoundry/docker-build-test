@@ -1,14 +1,6 @@
 - The base image used was `python:3.10.2-slim`
 - Size of this base `44.15 MB`
 
-## Instance specification
-
-|Instance    |Instance store volumes | read IOPS / Write IOPS                  |
-|------------|-----------------------|-----------------------------------------|
-|r6id.xlarge | 1 x 237 GB            |67,083 / 33,542   (262.04 / 131.02 MBps) |
-|r6id.2xlarge| 1 x 474 GB            |134,167 / 67,084  (524.08 / 262.04 MBps) |
-|i4i.2xlarge | 1 x 1875 GB           |200,000 / 110,000 (781.25 / 429.68 MBps) |
-
 # Benchmarks
 
 | Builder                         | Dockerfile name | First Build time in seconds                 | second build (change in python file) time in seconds          | build in seconds after updating requirements.txt (build + push) |
@@ -31,6 +23,14 @@
 | Truefoundry Global Builder NVMe (i4i.2xlarge) | [Dockerfile.uv-with-cache-mount (uv with cache mount)](https://github.com/truefoundry/docker-build-test/blob/main/Dockerfile.uv-with-cache-mount)                       | - [119s](https://github.com/truefoundry/docker-build-test/blob/main/config-and-logs/logs-on-i4i/first-build-with-uv-with-cache.txt)<br>- Dependency installation time: 33.3ss <br>-  Base image cached: true <br>-  Exporting layers and pushing manifest took: 67.5s (exporting layers took: 14.6s) <br>-  Exporting cache to registry: 0.6s <br> | - | - [98s](https://github.com/truefoundry/docker-build-test/blob/main/config-and-logs/logs-on-i4i/second-build-with-uv-with-cache.txt)<br>- Dependency installation time: 8s <br>-  Base image cached: true <br>-  Exporting layers and pushing manifest took: 80.6s (exporting layers took: 15.2s) <br>-  Exporting cache to registry: 0.8s <br>
 | GitHub Action                   | [Dockerfile.pip-without-cache-mount](https://github.com/truefoundry/docker-build-test/blob/main/Dockerfile.pip-without-cache-mount)                |       | | 
 | GitHub Action                   | [Dockerfile.uv-without-cache-mount](https://github.com/truefoundry/docker-build-test/blob/main/Dockerfile.uv-with-cache-mount)                | - [318s](https://github.com/truefoundry/docker-build-test/blob/main/config-and-logs/first-build-with-uv-github-action.txt)<br>- Dependency installation time: 37.9s <br>-  Base image cached: false (took 1.8s to download) <br>-  Exporting layers and pushing manifest took: **235s** (exporting layers took: 205s) <br>-  Exporting cache to registry: 39s <br> | [123s + 150s(for downloading layers) = 273s](https://github.com/truefoundry/docker-build-test/blob/main/config-and-logs/second-build-with-uv-github-action.txt) | [398s](https://github.com/truefoundry/docker-build-test/blob/main/config-and-logs/third-build-with-uv-github-action.txt)<br>- Dependency installation time: 37.7s <br>-  Base image cached: false (took 2s to download) <br>-  Exporting layers and pushing manifest took: 309s (exporting layers took: 213s) <br>-  Exporting cache to registry: 41s <br>
+
+## Instance specification
+
+|Instance    |Instance store volumes | read IOPS / Write IOPS                  |
+|------------|-----------------------|-----------------------------------------|
+|r6id.xlarge | 1 x 237 GB            |67,083 / 33,542   (262.04 / 131.02 MBps) |
+|r6id.2xlarge| 1 x 474 GB            |134,167 / 67,084  (524.08 / 262.04 MBps) |
+|i4i.2xlarge | 1 x 1875 GB           |200,000 / 110,000 (781.25 / 429.68 MBps) |
 
 ## Difference between build times wrt builder without nvme (first time build)
 
